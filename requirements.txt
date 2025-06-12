@@ -4,8 +4,3 @@ google-generativeai
 plotly
 pandasql
 openpyxl
-sqlite3
-tempfile
-os
-datetime
-re
