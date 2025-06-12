@@ -665,4 +665,4 @@ with tab3:
 # FOOTER
 # ----------------------------------
 st.divider()
-st.caption("DataStory Pro | Powered by Google Gemini")
+st.caption("DataStory Pro | Created by Vikram Singh")
