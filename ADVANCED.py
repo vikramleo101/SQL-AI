@@ -20,7 +20,7 @@ st.set_page_config(
 )
 
 st.title("🎯 DataStory Pro")
-st.caption("Natural Language → SQL Analysis")
+st.caption("Natural Language → SQL Analysis|| Created by Vikram Singh")
 st.divider()
 
 # Initialize Session State
