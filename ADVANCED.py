@@ -16,6 +16,10 @@ import time
 st.set_page_config(
     page_title="DataStory Pro",
     page_icon="🤖",
+    st.markdown(
+    "<span style='font-size: 18px; font-weight: bold;'Created by Vikram Singh</span>",
+    unsafe_allow_html=True
+)
     layout="wide"
 )
 
