@@ -20,7 +20,7 @@ st.set_page_config(
 )
 
 st.markdown(
-    "<span style='font-size: 14px; font-weight: bold; color: #555;'>Created by Vikram Singh</span>",
+    "<span style='font-size: 18px; font-weight: bold; color: #255;'>Created by Vikram Singh</span>",
     unsafe_allow_html=True
 )
 
