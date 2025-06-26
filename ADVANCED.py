@@ -16,16 +16,17 @@ import time
 st.set_page_config(
     page_title="DataStory Pro",
     page_icon="🤖",
-    st.markdown(
-    "<span style='font-size: 18px; font-weight: bold;'Created by Vikram Singh</span>",
-    unsafe_allow_html=True
-)
     layout="wide"
+)
+
+st.markdown(
+    "<span style='font-size: 14px; font-weight: bold; color: #555;'>Created by Vikram Singh</span>",
+    unsafe_allow_html=True
 )
 
 st.title("🎯 DataStory Pro")
 st.markdown(
-    "<span style='font-size: 18px; font-weight: bold;'>Natural Language → SQL Analysis|| Created by Vikram Singh</span>",
+    "<span style='font-size: 18px; font-weight: bold;'>Natural Language → SQL Analysis</span>",
     unsafe_allow_html=True
 )
 st.divider()
@@ -91,7 +92,7 @@ def execute_query(query):
                 # DO NOT COMMIT HERE. We wait for the user to click "Save".
                 st.session_state.db_modified = True # Flag that DB has been changed
                 # Refresh table previews from the connection to show pending changes
-                refresh_all_tables() 
+                refresh_all_tables()
                 if st.session_state.active_tables:
                     st.session_state.df = st.session_state.multiple_tables_info[st.session_state.active_tables[0]]['df']
                 st.success("Query executed. Preview updated with pending changes. Click 'Save Changes' to make them permanent.")
@@ -532,7 +533,7 @@ with tab2:
     
     df_to_visualize = None
     if data_source_name == "Last Query Result":
-        if st.session_state.last_analysis and not st.session_state.last_analysis["result_df"].empty:
+        if st.session_state.last_analysis and st.session_state.last_analysis.get("result_df") is not None and not st.session_state.last_analysis["result_df"].empty:
             df_to_visualize = st.session_state.last_analysis["result_df"]
         else:
             st.warning("No query result available to visualize. Please run a query in the 'NL to SQL' tab first.")
@@ -546,7 +547,7 @@ with tab2:
     if df_to_visualize is None:
         st.stop()
 
-    st.success(f"Visualizing dataset with {len(df_to_visualize)} rows and {len(df_to_visualize.columns)} columns.")
+    st.success(f"Visualizing dataset with {len(df_to_visualize):,} rows and {len(df_to_visualize.columns)} columns.")
     
     col1, col2 = st.columns([1, 3])
     with col1:
@@ -602,8 +603,7 @@ with tab2:
 
 # TAB 3: DATA QUALITY REPORT
 with tab3:
-    # ... (No changes needed in this tab, keeping it as is)
-    st.header("Data Quality Analysis")
+    st.header("🧐 Data Quality Analysis")
     
     df_for_quality = None
     if st.session_state.file_type == 'db' and st.session_state.active_tables:
@@ -685,4 +685,4 @@ with tab3:
 # FOOTER
 # ----------------------------------
 st.divider()
-st.caption("DataStory Pro | Created by Vikram Singh")
+st.caption("DataStory Pro | Created by Vikram")
